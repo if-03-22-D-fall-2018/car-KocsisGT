@@ -20,17 +20,17 @@ struct CarImplementation
   enum Color color;
   double fill_level;
   double acceleration;
-  int speed;
+  double speed;
   int max_speed;
   bool available;
 };
 
-struct CarImplementation aixam1 {AIXAM, RED, 16.0, 0.0, 0, true};
-struct CarImplementation multipla1 {FIAT_MULTIPLA, GREEN, 65.0, 0.0, 0, true};
-struct CarImplementation multipla2 {FIAT_MULTIPLA, BLUE, 65.0, 0.0, 0, true};
-struct CarImplementation multipla3 {FIAT_MULTIPLA, ORANGE, 65.0, 0.0, 0, true};
-struct CarImplementation jeep1 {JEEP, SILVER, 80.0, 0.0, 0, true};
-struct CarImplementation jeep2 {JEEP, BLACK, 80.0, 0.0, 0, true};
+struct CarImplementation aixam1 {AIXAM, RED, 16.0, 0.0, 0.0, 45, true};
+struct CarImplementation multipla1 {FIAT_MULTIPLA, GREEN, 65.0, 0.0, 0.0, 170, true};
+struct CarImplementation multipla2 {FIAT_MULTIPLA, BLUE, 65.0, 0.0, 0.0, 170, true};
+struct CarImplementation multipla3 {FIAT_MULTIPLA, ORANGE, 65.0, 0.0, 0.0, 170, true};
+struct CarImplementation jeep1 {JEEP, SILVER, 80.0, 0.0, 0.0, 196, true};
+struct CarImplementation jeep2 {JEEP, BLACK, 80.0, 0.0, 0.0, 196, true};
 
 static Car car_park[6] = {&aixam1, &multipla1, &multipla2, &multipla3, &jeep1, &jeep2};
 
@@ -84,6 +84,7 @@ void set_acceleration_rate(Car car, double rate)
   {
     rate = 2.26;
   }
+  car->acceleration = rate;
 }
 
 int get_speed(Car car)
